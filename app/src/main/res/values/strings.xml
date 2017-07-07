@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MVPKotlin</string>
+    <string name="base_url">http://www.api.com.br</string>
+</resources>
