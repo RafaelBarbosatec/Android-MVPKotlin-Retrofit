@@ -2,14 +2,18 @@ package rafael.barbosa.mvpkotlin.Home
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import rafael.barbosa.mvpkotlin.Adapters.BooksAdapter
 
 import rafael.barbosa.mvpkotlin.R
+import rafael.barbosa.mvpkotlin.model.Book
 
 class HomeActivity : AppCompatActivity() , HomeContract.UserView{
 
+    var adapter:BooksAdapter? = null
     /**
      * Instanciamos de forma preguiçosa o presenter
      */
@@ -21,16 +25,21 @@ class HomeActivity : AppCompatActivity() , HomeContract.UserView{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        bt.setOnClickListener { presenter.getData() }
+        iniciarViews()
     }
 
-    /**
-     * Função chamada pelo presenter para exibir resposta do servidor
-     */
-    override fun showResponde(response: String) {
-       tv_result.text = response
+    private fun iniciarViews() {
+
+        recycler_books.layoutManager = LinearLayoutManager(this)
+        adapter = BooksAdapter(ArrayList<Book>(),this)
+        recycler_books.adapter = adapter
+
     }
 
+
+    override fun showBooks(books: List<Book>) {
+        adapter?.replaceData(books)
+    }
 
     /**
      * Função chamada pelo presenter para exibir ou ocultar progressBar
@@ -44,6 +53,10 @@ class HomeActivity : AppCompatActivity() , HomeContract.UserView{
 
     }
 
+    override fun onResume() {
+        presenter.loadBooks()
+        super.onResume()
+    }
 
     override fun onDestroy() {
         super.onDestroy()
@@ -51,3 +64,4 @@ class HomeActivity : AppCompatActivity() , HomeContract.UserView{
         presenter.onDestroy()
     }
 }
+

@@ -1,5 +1,6 @@
 package rafael.barbosa.mvpkotlin.Home
 
+import rafael.barbosa.mvpkotlin.model.Book
 import rafael.barbosa.mvpkotlin.util.Presenter
 import rafael.barbosa.mvpkotlin.util.View
 
@@ -11,13 +12,13 @@ interface HomeContract{
     interface UserView: View {
 
         fun showProgressbar(show: Boolean)
-        fun showResponde(response: String)
+        fun showBooks(books:List<Book>)
 
     }
 
     interface UserActionsListener <T : View>: Presenter<T> {
 
-        fun getData()
+        fun loadBooks()
 
     }
 

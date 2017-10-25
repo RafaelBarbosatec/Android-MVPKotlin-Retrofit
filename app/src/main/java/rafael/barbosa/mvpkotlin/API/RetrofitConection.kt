@@ -13,9 +13,9 @@ import retrofit2.converter.gson.GsonConverterFactory
  * Created by dev on 26/06/17.
  */
 
-class RetrofitConection() {
+object RetrofitConection {
 
-    val url = "https://api-caleola-usuarios.herokuapp.com/"
+    val url = "https://boleiro.tk/"
     var baseAPI: BaseAPI
 
     init {
@@ -33,9 +33,4 @@ class RetrofitConection() {
 
     }
 
-    private object Holder { val INSTANCE = RetrofitConection() }
-
-    companion object {
-        val instance: RetrofitConection by lazy { Holder.INSTANCE }
-    }
 }
