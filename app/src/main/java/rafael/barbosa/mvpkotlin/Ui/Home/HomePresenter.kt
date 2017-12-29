@@ -36,7 +36,8 @@ class HomePresenter(val context: Context,
 
                     if (response != null){
 
-                        view?.showBooks(response)
+                        livros = response
+                        view?.showBooks(livros!!)
                         view?.showEmpty(false)
 
                     }else{
