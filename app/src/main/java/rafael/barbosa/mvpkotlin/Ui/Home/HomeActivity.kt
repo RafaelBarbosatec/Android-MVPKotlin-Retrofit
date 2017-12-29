@@ -1,17 +1,16 @@
-package rafael.barbosa.mvpkotlin.Home
+package rafael.barbosa.mvpkotlin.Ui.Home
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import rafael.barbosa.mvpkotlin.Adapters.BooksAdapter
 
 import rafael.barbosa.mvpkotlin.R
-import rafael.barbosa.mvpkotlin.model.Book
+import rafael.barbosa.mvpkotlin.Model.Book
+import rafael.barbosa.mvpkotlin.Support.Base.BaseActivity
 
-class HomeActivity : AppCompatActivity() , HomeContract.UserView{
+class HomeActivity : BaseActivity() , HomeContract.UserView{
 
     var adapter:BooksAdapter? = null
     /**
@@ -51,6 +50,14 @@ class HomeActivity : AppCompatActivity() , HomeContract.UserView{
             progress.visibility = View.INVISIBLE
         }
 
+    }
+
+    override fun showEmpty(show: Boolean) {
+        if (show){
+            tv_empty.visibility = View.VISIBLE
+        }else{
+            tv_empty.visibility = View.INVISIBLE
+        }
     }
 
     override fun onResume() {

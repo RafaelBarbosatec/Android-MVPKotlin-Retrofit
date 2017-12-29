@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MVPKotlin.iml" filepath="$PROJECT_DIR$/MVPKotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Android-MVPKotlin-Retrofit.iml" filepath="$PROJECT_DIR$/Android-MVPKotlin-Retrofit.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

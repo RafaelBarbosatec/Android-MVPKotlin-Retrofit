@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="rafael.barbosa.mvpkotlin.Home.HomeActivity">
+    tools:context=".Ui.Home.HomeActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_main"
@@ -28,5 +28,13 @@
         android:layout_height="wrap_content"
         android:visibility="invisible"
         android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/tv_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:text="Books not found"/>
 
 </RelativeLayout>

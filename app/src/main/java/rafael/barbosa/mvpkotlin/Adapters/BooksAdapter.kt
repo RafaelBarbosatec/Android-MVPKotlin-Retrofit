@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.squareup.picasso.Picasso
 import rafael.barbosa.mvpkotlin.R
-import rafael.barbosa.mvpkotlin.model.Book
-import kotlinx.android.synthetic.main.item_book.*
+import rafael.barbosa.mvpkotlin.Model.Book
 import kotlinx.android.synthetic.main.item_book.view.*
 
 /**

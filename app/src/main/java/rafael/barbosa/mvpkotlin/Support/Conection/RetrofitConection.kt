@@ -1,4 +1,4 @@
-package com.prodeb.dev.app_caleola_kotlin.API
+package rafael.barbosa.mvpkotlin.Support.Conection
 
 import android.content.Context
 
@@ -13,9 +13,8 @@ import retrofit2.converter.gson.GsonConverterFactory
  * Created by dev on 26/06/17.
  */
 
-object RetrofitConection {
+class RetrofitConection(url: String) {
 
-    val url = "https://boleiro.tk/"
     var baseAPI: BaseAPI
 
     init {
